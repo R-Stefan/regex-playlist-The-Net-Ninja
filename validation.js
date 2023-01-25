@@ -19,6 +19,9 @@ we have a form written in HTML, its input fields should receive new CSS if a cor
 const patterns = {
   //ro country code +40
   telephone: /^\+40( ?\d{3}){3}$/,
+  username: /^[a-z\d]{5,12}$/i,
+  password: /^[\w@\-]{8,20}$/,
+  slug: /^[a-z\d\-]{8,20}$/,
 };
 
 //instead of creating a variable for each input field, we create a single array containing all of them
