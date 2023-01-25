@@ -14,7 +14,19 @@ How this works:
 
 we have a form written in HTML, its input fields should receive new CSS if a correct regex pattern is typed into them. We monitor the input fields by attaching event listeners to keypresses, so at every keypress, the contents of the field are evaluated and if the contents match the regex pattern, the input field gets a green border indicating it's valid.
 */
+/* breaking down the regex for e-mail addresses:
+name@domain.extension.additional
 
+name - alphanumeric, can include underscores, hyphens and dots
+@ - one symbol, mandatory
+domain - alphanumeric, can include hyphens
+. - one symbol, mandatory
+extension - only letters, at least 2 letters long
+.additional - one dot, followed by some letters, optional. This is in case of domains that end it .co.uk (for example)
+
+
+
+*/
 //we create an object to store regex patterns (instead of creating one variable for each)
 const patterns = {
   //ro country code +40
@@ -22,6 +34,7 @@ const patterns = {
   username: /^[a-z\d]{5,12}$/i,
   password: /^[\w@\-]{8,20}$/,
   slug: /^[a-z\d\-]{8,20}$/,
+  email: /^[\w\-\.]+@[a-z\-\d]*\.[a-z]{2,8}([\.a-z]{2,8})?$/,
 };
 
 //instead of creating a variable for each input field, we create a single array containing all of them
