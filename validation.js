@@ -34,7 +34,7 @@ const patterns = {
   username: /^[a-z\d]{5,12}$/i,
   password: /^[\w@\-]{8,20}$/,
   slug: /^[a-z\d\-]{8,20}$/,
-  email: /^[\w\-\.]+@[a-z\-\d]*\.[a-z]{2,8}([\.a-z]{2,8})?$/,
+  email: /^[\w\-\.]+@[a-z\-\d]+\.[a-z]{2,8}([\.a-z]{2,8})?$/,
 };
 
 //instead of creating a variable for each input field, we create a single array containing all of them
